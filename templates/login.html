@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flask Intro - Login Page</title>
-  <link rel="stylesheet" href="/static/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Please login</h1>
-    <br>
-    <form action="" method="post">
-      <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
-      <input type="password" name="password" placeholder="Password" value="{{ request.form.password }}">
-      <input type="submit" value="Login" class="btn btn-default">
-    </form>
+{% extends 'base.html' %}
 
-    {% if error %}
-      <p class="error">
-        <strong>Error:</strong> {{ error }}
-      </p>
-    {% endif %}
-  </div>
-</body>
-</html>
+{% block pagetitle %}
+  <title>Flask Intro - Login Page</title>  
+{% endblock %}
+
+
+{% block content %}
+  <h1>Please login</h1>
+  <br>
+  <form action="" method="post">
+    <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
+    <input type="password" name="password" placeholder="Password" value="{{ request.form.password }}">
+    <input type="submit" value="Login" class="btn btn-default">
+  </form>
+
+  {% if error %}
+    <p class="error">
+      <strong>Error:</strong> {{ error }}
+    </p>
+  {% endif %}
+  
+{% endblock %}

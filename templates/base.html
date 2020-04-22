@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block pagetitle %}
+    
+  {% endblock %}
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    {% block content %}
+      
+    {% endblock %}
+    
+    {% for message in get_flashed_messages() %}
+      {{ message }}
+    {% endfor %}
+  </div>
+</body>
+</html>
